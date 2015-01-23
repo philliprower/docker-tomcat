@@ -10,6 +10,7 @@ RUN keytool -import -trustcacerts -file /usr/lib/jvm/java-8-openjdk-amd64/jre/li
 ENV CATALINA_OPTS -Denv=QA -Xmx1024m
 VOLUME /usr/local/tomcat/webapps
 VOLUME /usr/local/tomcat/conf
+VOLUME /usr/local/tomcat/logs
 EXPOSE 8080
 EXPOSE 8009
 CMD ["catalina.sh", "run"]
