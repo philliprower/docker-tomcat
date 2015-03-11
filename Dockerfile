@@ -8,6 +8,7 @@ ADD web.xml /usr/local/tomcat/webapps/manager/WEB-INF/
 ADD crt/qa.crt /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/
 RUN keytool -import -trustcacerts -file /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/qa.crt -alias QA_CERT -keystore /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts -noprompt -storepass changeit
 ENV CATALINA_OPTS -Denv=QA -Xmx1024m
+ENV TZ US/Arizona
 VOLUME /usr/local/tomcat/webapps
 VOLUME /usr/local/tomcat/conf
 VOLUME /usr/local/tomcat/logs
